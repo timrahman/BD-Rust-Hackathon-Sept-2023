@@ -86,7 +86,7 @@ Your task today is to extend the existing server with mock functionality for sto
 
     ## So what do I win?
 
-    Details dropped in hackathon slack channel!
+    Details dropped in hackathon slack channel. Attendees who attend the opening ceremony and make their submission by 8:00p UTC are eligible!
 
     ## Helpful Bits
 

@@ -1,5 +1,5 @@
--- migrations/{timestamp}_create_subscriptions_table.sql
--- Create Subscriptions Table
+-- migrations/{timestamp}_create_tables.sql
+-- Create Tables
 CREATE TABLE users(
     id uuid NOT NULL,
     PRIMARY KEY (id),
