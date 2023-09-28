@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  postgres:
+    build:
+      context: ./build
+      dockerfile: db.Dockerfile
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=tard_fi_data
+    ports:
+      - '5432:5432'
