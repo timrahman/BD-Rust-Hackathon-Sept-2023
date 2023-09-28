@@ -71,7 +71,16 @@ Your task today is to extend the existing server with mock functionality for sto
         - If `limit_order` == true, and the price is higher than `limit_price`, return an error to the user indicating the difference. Otherwise, mock the order and mark the `order_type` as `Limit Buy`.
         - If an invalid ticker is provided, return a message to the user indicating as such
     4. `/order/sell`
-         - POST: Accept a json payload with the user_id you want to associate the transaction with, a valid stock ticker symbol (e.g. AAPL, AMZN, IBM, 3M, etc.), and the quantity of stocks. You'll need to make sure the user_id, ticker symbol, price per share, total amount for the transaction, and the order type are recorded in the DB.
+         - POST: Accept a json payload with the user_id you want to associate the transaction with, a valid stock ticker symbol (e.g. AAPL, AMZN, IBM, 3M, etc.), and the quantity of stocks. You'll need to make sure the user_id, ticker symbol, price per share, total amount for the transaction, and the order type are recorded in the DB. Here's an example payload: 
+        ```
+            {
+                "user_id": "Notro Bert",
+                "ticker": "AMZN",
+                "quantity" : 30,
+                "limit_order" : false
+                "limit_price" : 200.00 // should be ignored unled limit_order is true 
+            }   
+         ```
          - The price data will be retrieved in the same way it is for the buy endpoint.
         - If `limit_order` == false, attempt to mock the order and if successful, mark the `order_type` as `Market Sell`.
         - If `limit_order` == true, and the price is lower than `limit_price`, return an error to the user indicating the difference. Otherwise, mock the order and mark the `order_type` as `Limit Sell`.
