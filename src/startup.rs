@@ -1,4 +1,5 @@
 use crate::routes::health_check;
+use crate::routes::users;
 use actix_web::middleware::Logger;
 use actix_web::{
     dev::Server,
@@ -14,6 +15,7 @@ pub fn run(listener: TcpListener, db_connection_pool: PgPool) -> Result<Server, 
         App::new()
             .wrap(Logger::default())
             .route("/health_check", web::get().to(health_check))
+            .route("/users", web::get().to(users))
             .app_data(db_connection.clone())
     })
     .listen(listener)?
